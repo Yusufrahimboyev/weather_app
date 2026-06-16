@@ -26,5 +26,18 @@
     "Search": "Поиск",
     "Setting": "Настройки",
     "Language": "Язык",
-    "update": "Обновлено"
+    "update": "Обновлено",
+    "FiveDayWeather": "Прогноз на 5 дней",
+    "AddNewCity": "Добавить город",
+    "Add": "Добавить",
+    "Cancel": "Отмена",
+    "CityName": "Название города",
+    "SavedLocations": "Сохранённые места",
+    "NoSavedLocations": "Нет сохранённых мест",
+    "SearchCity": "Поиск города",
+    "NoResults": "Ничего не найдено",
+    "Delete": "Удалить",
+    "DeleteConfirmTitle": "Удаление",
+    "DeleteConfirmMessage": "Вы уверены, что хотите удалить?",
+    "SearchForCity": "Найдите город для просмотра погоды"
 }

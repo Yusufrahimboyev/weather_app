@@ -1,86 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
-import 'package:tsk_4/src/common/constants/app_icons.dart';
+import 'package:tsk_4/src/common/model/weather_model.dart';
 import 'package:tsk_4/src/common/utils/context_extension.dart';
+import 'package:tsk_4/src/common/widgets/icon_changer.dart';
 
 class MyCard extends StatelessWidget {
-  final List<String> days;
-  final List<String> temp;
-  final List<String> icons;
-  final List<String> speed;
-  const MyCard({
-    super.key,
-    required this.days,
-    required this.temp,
-    required this.icons,
-    required this.speed,
-  });
+  final WeatherModelList weatherModelList;
+
+  const MyCard({super.key, required this.weatherModelList});
 
   @override
   Widget build(BuildContext context) {
     return DecoratedBox(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xff535353).withValues(alpha: 0.2),
+        borderRadius: BorderRadius.circular(20),
+        color: const Color(0xff535353).withValues(alpha: 0.64),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-        child: SizedBox(
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 4),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              for (int i = 0; i < days.length; i++)
-                Column(
-                  children: [
-                    Text(DateFormat('E d').format(DateTime.parse(days[i]))),
-                    SizedBox(height: 20),
-                    switch (icons[i]) {
-                      "cloudly" => SvgPicture.asset(
-                        AppIcons.cloudly,
-                        height: 40,
-                        width: 40,
+              for (int i = 0; i < weatherModelList.weatherdata.length; i++)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        DateFormat(
+                          'E d',
+                        ).format(weatherModelList.weatherdata[i].dateTime),
+                        style: context.textTheme.titleSmall?.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
-                      "rainy" => SvgPicture.asset(
-                        AppIcons.rainy,
-                        height: 40,
-                        width: 40,
+                      const SizedBox(height: 16),
+                      IconChanger(
+                        iconCode: weatherModelList.weatherdata[i].iconCode,
+                        size: 40,
+                        wmoCode: weatherModelList.weatherdata[i].wmoCode,
                       ),
-                      "windly" => SvgPicture.asset(
-                        AppIcons.windy,
-                        height: 40,
-                        width: 40,
+                      const SizedBox(height: 16),
+                      Text(
+                        "${weatherModelList.weatherdata[i].temp.round()}°C",
+                        style: context.textTheme.titleSmall?.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
-                      "sunny" => SvgPicture.asset(
-                        AppIcons.sun,
-                        height: 40,
-                        width: 40,
+                      const SizedBox(height: 12),
+                      Text(
+                        textAlign: TextAlign.center,
+                        "${weatherModelList.weatherdata[i].windSpeed.round()}\n${context.localizations.km}",
+                        style: context.textTheme.titleSmall?.copyWith(
+                          color: Colors.white70,
+                          height: 1.2,
+                        ),
                       ),
-                      "stormy" => SvgPicture.asset(
-                        AppIcons.thunder,
-                        height: 40,
-                        width: 40,
-                      ),
-                      "night" => SvgPicture.asset(
-                        AppIcons.moon,
-                        height: 40,
-                        width: 40,
-                      ),
-                      _ => SvgPicture.asset(
-                        AppIcons.cloudly,
-                        height: 40,
-                        width: 40,
-                      ),
-                    },
-                    SizedBox(height: 20),
-                    Text("${temp[i]}°C", style: context.textTheme.bodyMedium),
-                    SizedBox(height: 20),
-                    Text(
-                      textAlign: TextAlign.center,
-                      "${speed[i]} \n ${context.localizations.km}",
-                      style: context.textTheme.bodyMedium,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
             ],
           ),

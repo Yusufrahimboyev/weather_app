@@ -34,5 +34,13 @@
     "CityName":"City Name",
     "Location":"Location",
     "CurrentWeather":"Current Weather",
-    "Updated":"Updated"
+    "Updated":"Updated",
+    "SavedLocations":"Saved Locations",
+    "NoSavedLocations":"No saved locations",
+    "SearchCity":"Search city",
+    "NoResults":"No results",
+    "Delete":"Delete",
+    "DeleteConfirmTitle":"Delete",
+    "DeleteConfirmMessage":"Are you sure you want to delete?",
+    "SearchForCity":"Search for a city to see weather"
 }

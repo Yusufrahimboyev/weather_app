@@ -18,4 +18,6 @@ class AppIcons {
   static const String mist = '$_path/mist.svg';
   static const String temperature = '$_path/temperature.svg';
   static const String gradusCelcius = '$_path/gradus_celcius.svg';
+  static const String search = "$_path/search.svg";
+  static const String plusCircle = "$_path/plus.svg";
 }

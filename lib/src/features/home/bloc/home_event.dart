@@ -1,17 +1,20 @@
 part of 'home_bloc.dart';
 
-sealed class HomeEvent extends Equatable {
+sealed class HomeEvent {
   const HomeEvent();
-
-  @override
-  List<Object?> get props => [];
 }
 
-final class GetWeather$HomeEvent extends HomeEvent {
-  final String city;
+final class GetWeatherList$HomeEvent extends HomeEvent {
+  final String cityName;
+  const GetWeatherList$HomeEvent(this.cityName);
+}
 
-  const GetWeather$HomeEvent({required this.city});
+final class AddCity$HomeEvent extends HomeEvent {
+  final String newCity;
+  const AddCity$HomeEvent(this.newCity);
+}
 
-  @override
-  List<Object?> get props => [];
+final class RemoveCity$HomeEvent extends HomeEvent {
+  final String cityName;
+  const RemoveCity$HomeEvent(this.cityName);
 }

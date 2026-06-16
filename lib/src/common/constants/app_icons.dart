@@ -16,4 +16,6 @@ class AppIcons {
   static const String sun = '$_path/sun.svg';
   static const String thunder = '$_path/thunder.svg';
   static const String windy = '$_path/windy.svg';
+  static const String search = '$_path/search.svg';
+  static const String plusCircle = '$_path/plus.svg';
 }

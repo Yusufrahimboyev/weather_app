@@ -253,6 +253,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Updated`
+  String get Updated {
+    return Intl.message('Updated', name: 'Updated', desc: '', args: []);
+  }
+
+  /// `Saved Locations`
+  String get SavedLocations {
+    return Intl.message(
+      'Saved Locations',
+      name: 'SavedLocations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No saved locations`
+  String get NoSavedLocations {
+    return Intl.message(
+      'No saved locations',
+      name: 'NoSavedLocations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search city`
+  String get SearchCity {
+    return Intl.message('Search city', name: 'SearchCity', desc: '', args: []);
+  }
+
+  /// `No results`
+  String get NoResults {
+    return Intl.message('No results', name: 'NoResults', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get Delete {
+    return Intl.message('Delete', name: 'Delete', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get DeleteConfirmTitle {
+    return Intl.message(
+      'Delete',
+      name: 'DeleteConfirmTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete?`
+  String get DeleteConfirmMessage {
+    return Intl.message(
+      'Are you sure you want to delete?',
+      name: 'DeleteConfirmMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for a city to see weather`
+  String get SearchForCity {
+    return Intl.message(
+      'Search for a city to see weather',
+      name: 'SearchForCity',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

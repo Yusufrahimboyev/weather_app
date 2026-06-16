@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tsk_4/src/features/home/bloc/home_bloc.dart';
+import 'package:tsk_4/src/features/main/bloc/main_bloc.dart';
 
 import '../dependency/appdependency.dart';
 
@@ -21,5 +24,19 @@ class AppScopeState extends State<AppScope> {
   }
 
   @override
-  Widget build(BuildContext context) => widget.child;
+  Widget build(BuildContext context) => MultiBlocProvider(
+    providers: [
+      BlocProvider(
+        create: (_) =>
+            MainBloc(dependency.photoRepository, dependency.sharedPreferences),
+      ),
+      BlocProvider(
+        create: (_) => HomeBloc(
+          weatherRepository: dependency.weatherRepository,
+          sharedPreferences: dependency.sharedPreferences,
+        ),
+      ),
+    ],
+    child: widget.child,
+  );
 }

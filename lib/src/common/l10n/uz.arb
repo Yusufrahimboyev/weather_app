@@ -26,5 +26,18 @@
     "Search": "Qidiruv",
     "Setting": "Sozlamalar",
     "Language": "Til",
-    "update": "Yangilandi"
+    "update": "Yangilandi",
+    "FiveDayWeather": "5 kunlik ob-havo",
+    "AddNewCity": "Yangi shahar qo'shish",
+    "Add": "Qo'shish",
+    "Cancel": "Bekor qilish",
+    "CityName": "Shahar nomi",
+    "SavedLocations": "Saqlangan joylar",
+    "NoSavedLocations": "Saqlangan joylar yo'q",
+    "SearchCity": "Shahar qidirish",
+    "NoResults": "Natija topilmadi",
+    "Delete": "O'chirish",
+    "DeleteConfirmTitle": "O'chirish",
+    "DeleteConfirmMessage": "Haqiqatan ham o'chirmoqchimisiz?",
+    "SearchForCity": "Ob-havoni ko'rish uchun shahar qidiring"
 }

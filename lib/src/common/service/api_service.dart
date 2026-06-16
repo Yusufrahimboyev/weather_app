@@ -1,6 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:tsk_4/src/common/constants/constants.dart';
+import 'package:tsk_4/src/common/model/weather_model.dart';
 
 enum Method { get, post, put, delete }
 
@@ -17,7 +18,7 @@ class ApiService {
     return false;
   }
 
-  Future<Map<String, dynamic>> request(String cityName) async {
+  Future<WeatherModelList> request(String cityName) async {
     if (!await checkConnection()) {
       throw Exception("No Internet Connection");
     }
@@ -30,10 +31,10 @@ class ApiService {
           'units': 'metric',
         },
       );
-
-      return response.data;
-    } catch (e) {
-      throw Exception(e.toString());
+      final forecast = WeatherModelList.fromJson(response.data);
+      return forecast;
+    } on Object catch (_) {
+      throw Exception("Noto'g'ri shaxar nomi!");
     }
   }
 }
