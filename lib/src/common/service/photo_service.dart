@@ -19,7 +19,7 @@ class PhotoService {
         },
       );
       final candidates = response.data['candidates'] as List?;
-      print("candidates: $candidates");
+
       if (candidates == null || candidates.isEmpty) {
         throw Exception('No results found for "$city"');
       }

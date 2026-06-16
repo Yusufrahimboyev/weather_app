@@ -8,7 +8,7 @@ class Constants {
   static const String getMyCurrentLocation = "get_my_current_location";
   static const String currentWeather = "current_weather";
   static const String photoBaseUrl =
-      "https://maps.googleapis.com/maps/api/place/geocoding/json";
+      "https://maps.googleapis.com/maps/api/place/findplacefromtext/json";
   static const String photoApiKey = "AIzaSyD4DFSMjnSBmRkcF7RxWwwv4Svns4jxo6E";
   static const String fiveDays = "FiveDays";
   static const String background = "background_image";
